@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="ZimLink Marketplace — discover listings from Zimbabwe and contact sellers directly.">
+  <title>ZimLink Marketplace | Buy & Sell in Zimbabwe</title>
+  <style>
+    :root{--navy:#102a43;--navy2:#173f5f;--green:#1f9d67;--green2:#e7f7ef;--ink:#182230;--muted:#657386;--line:#e4e9ef;--bg:#f5f7fa;--white:#fff;--gold:#ffcf56;--shadow:0 10px 30px rgba(16,42,67,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--navy);color:#eaf2f8;font-size:.82rem;padding:8px 0}.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.topbar strong{color:var(--gold)}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:1.15rem;letter-spacing:-.4px}.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.2rem}.brand span small{display:block;font-size:.67rem;color:var(--muted);font-weight:600;letter-spacing:.3px}.nav-actions{display:flex;align-items:center;gap:10px}.btn{border:0;border-radius:11px;padding:11px 16px;font-weight:750;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,opacity .15s}.btn:active{transform:scale(.98)}.btn-primary{background:var(--green);color:white}.btn-primary:hover{opacity:.9}.btn-light{background:#edf2f7;color:var(--navy)}
+    .hero{background:linear-gradient(125deg,var(--navy),#1c5270);color:white;padding:48px 0 38px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.eyebrow{display:inline-flex;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:999px;font-size:.78rem;font-weight:700;color:#e8f7ef}.hero h1{font-size:clamp(2rem,5vw,3.55rem);line-height:1.06;letter-spacing:-1.5px;margin:16px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{color:#d5e2ed;max-width:560px;margin:0 0 22px}.hero-points{display:flex;gap:14px;flex-wrap:wrap;font-size:.86rem;color:#e3edf5}.hero-points span:before{content:'✓';color:#7de0ae;font-weight:900;margin-right:6px}.hero-art{min-height:210px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:24px;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;transform:rotate(1deg)}.art-tile{background:white;border-radius:16px;min-height:100px;color:var(--navy);display:flex;flex-direction:column;justify-content:space-between;padding:14px;font-weight:800}.art-tile span{font-size:2rem}.art-tile small{color:var(--muted);font-weight:600}.art-tile:nth-child(2){background:#fff5d8}.art-tile:nth-child(3){background:#e7f7ef}.art-tile:nth-child(4){background:#eaf2ff}
+    .search-section{margin-top:-20px;position:relative;z-index:2}.searchbox{background:white;padding:15px;border-radius:17px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 190px auto;gap:10px}.field{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 13px;background:white;color:var(--ink);outline:none}.field:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(31,157,103,.12)}
+    main{padding:32px 0 55px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}.section-head h2{font-size:1.55rem;letter-spacing:-.5px;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.count{font-size:.82rem;color:var(--muted);white-space:nowrap}.categories{display:flex;gap:9px;overflow-x:auto;padding:2px 1px 17px;scrollbar-width:thin}.chip{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:white;color:#425466;font-weight:700;font-size:.88rem;cursor:pointer}.chip.active{background:var(--navy);border-color:var(--navy);color:white}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.listing{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(16,42,67,.035);display:flex;flex-direction:column;min-width:0}.listing-photo{height:170px;background:linear-gradient(135deg,#e9f0f5,#dce8ef);display:grid;place-items:center;position:relative;overflow:hidden}.listing-photo img{width:100%;height:100%;object-fit:cover;display:block}.listing-photo .emoji{font-size:4rem}.tag{position:absolute;top:11px;left:11px;background:#fff;border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:800;color:var(--navy)}.listing-body{padding:15px;display:flex;flex-direction:column;flex:1}.listing-category{font-size:.74rem;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.5px}.listing h3{font-size:1.02rem;line-height:1.3;margin:6px 0 5px}.price{font-size:1.22rem;font-weight:900;color:var(--navy);margin:0 0 8px}.meta{color:var(--muted);font-size:.82rem;display:flex;gap:6px;align-items:center}.description{color:#536273;font-size:.86rem;margin:10px 0 14px;display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.listing-footer{margin-top:auto;display:flex;gap:8px}.listing-footer .btn{width:100%;padding:10px;font-size:.87rem}.empty{grid-column:1/-1;background:white;border:1px dashed #ccd6df;border-radius:16px;padding:35px 20px;text-align:center;color:var(--muted)}
+    .sell-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;margin-top:42px;background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:var(--shadow)}.sell-intro{background:var(--navy);color:white;border-radius:15px;padding:24px}.sell-intro h2{font-size:1.65rem;line-height:1.15;margin:0 0 12px}.sell-intro p{color:#d4e2ed;font-size:.91rem}.sell-intro ul{padding-left:20px;color:#e6f0f7;font-size:.9rem}.sell-intro li{margin:8px 0}.form-title{margin:2px 0 4px;font-size:1.25rem}.form-sub{color:var(--muted);font-size:.87rem;margin:0 0 18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-group{display:flex;flex-direction:column;gap:6px}.form-group.full{grid-column:1/-1}.form-group label{font-size:.83rem;font-weight:750;color:#344457}.form-group textarea{min-height:95px;resize:vertical}.form-note{font-size:.78rem;color:var(--muted);margin:11px 0}.status{font-size:.88rem;margin-top:12px;color:var(--green);font-weight:700;overflow-wrap:anywhere}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:34px}.how-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}.how-card b{display:block;margin:7px 0 3px}.how-card p{font-size:.86rem;color:var(--muted);margin:0}.how-icon{width:39px;height:39px;border-radius:12px;background:var(--green2);display:grid;place-items:center;font-size:1.2rem}
+    footer{background:#0b2032;color:#d6e2ec;padding:27px 0;font-size:.84rem}.footer-row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer-row p{margin:4px 0}.footer-brand{font-weight:850;color:white}.disclaimer{color:#aabcca;max-width:650px;margin-top:10px;font-size:.76rem}.mobile-cta{display:none}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-art{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sell-panel{grid-template-columns:1fr}.searchbox{grid-template-columns:1fr 1fr}.searchbox input{grid-column:1/-1}.searchbox button{grid-column:1/-1}.nav{padding:10px 0}.hero{padding:38px 0 35px}}
+    @media(max-width:520px){.topbar .wrap{justify-content:center;text-align:center}.nav-actions .btn-light{display:none}.nav-actions .btn{padding:10px 12px;font-size:.84rem}.brand{font-size:1rem}.brand-mark{width:36px;height:36px}.hero h1{font-size:2.35rem}.grid{grid-template-columns:1fr 1fr;gap:10px}.listing-photo{height:125px}.listing-photo .emoji{font-size:3rem}.listing-body{padding:11px}.listing h3{font-size:.92rem}.price{font-size:1.08rem}.description{font-size:.8rem}.meta{font-size:.76rem}.listing-footer .btn{font-size:.78rem;padding:9px 5px}.section-head h2{font-size:1.35rem}.sell-panel{padding:13px}.sell-intro{padding:19px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.how{grid-template-columns:1fr}.searchbox{padding:11px}.count{font-size:.75rem}.mobile-cta{display:flex;position:fixed;bottom:12px;left:12px;right:12px;z-index:12;box-shadow:0 8px 28px #0b203244}.mobile-cta .btn{width:100%}footer{padding-bottom:85px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Made for Zimbabwe 🇿🇼</span><span><strong>Free to list</strong> · Contact sellers directly</span></div></div>
+  <header><div class="wrap nav"><a class="brand" href="#home" aria-label="ZimLink home"><span class="brand-mark">Z</span><span>ZimLink <small>MARKETPLACE</small></span></a><div class="nav-actions"><a class="btn btn-light" href="#listings">Browse listings</a><a class="btn btn-primary" href="#sell">＋ Sell an item</a></div></div></header>
+  <section class="hero" id="home"><div class="wrap hero-grid"><div><span class="eyebrow">YOUR LOCAL BUY & SELL SPACE</span><h1>Good finds.<br><em>Closer to home.</em></h1><p>Discover cars, phones, electronics and more from sellers around Zimbabwe. Browse listings and contact sellers directly on WhatsApp.</p><div class="hero-points"><span>Free listings</span><span>Local sellers</span><span>No checkout fees</span></div></div><div class="hero-art" aria-hidden="true"><div class="art-tile"><span>🚗</span><div>Cars<small>Find your next ride</small></div></div><div class="art-tile"><span>📱</span><div>Phones<small>Upgrade smart</small></div></div><div class="art-tile"><span>💻</span><div>Electronics<small>Useful tech</small></div></div><div class="art-tile"><span>🛋️</span><div>Home & more<small>Everyday finds</small></div></div></div></div></section>
+  <div class="wrap search-section"><form class="searchbox" id="searchForm"><input class="field" id="searchInput" type="search" placeholder="Search cars, phones, furniture..." aria-label="Search listings"><select class="field" id="locationFilter" aria-label="Filter by location"><option value="">All locations</option><option>Harare</option><option>Ruwa</option><option>Bulawayo</option><option>Mutare</option><option>Gweru</option><option>Other</option></select><button class="btn btn-primary" type="submit">⌕ Search</button></form></div>
+  <main class="wrap"><section id="listings"><div class="section-head"><div><h2>Explore listings</h2><p>Find something useful from a local seller.</p></div><span class="count" id="listingCount" aria-live="polite"></span></div><div class="categories" id="categories" aria-label="Listing categories"><button class="chip active" type="button" data-category="All">All items</button><button class="chip" type="button" data-category="Cars">🚗 Cars</button><button class="chip" type="button" data-category="Phones">📱 Phones</button><button class="chip" type="button" data-category="Electronics">💻 Electronics</button><button class="chip" type="button" data-category="Home">🛋️ Home</button><button class="chip" type="button" data-category="Other">📦 Other</button></div><div class="grid" id="listingGrid"></div></section>
+    <section class="sell-panel" id="sell"><div class="sell-intro"><span class="eyebrow">SELL ON ZIMLINK</span><h2>Turn your item into someone else's great find.</h2><p>Send us your listing details on WhatsApp. The site administrator can review it before adding it to the public listings.</p><ul><li>Describe your item honestly</li><li>Use a price in US dollars</li><li>Meet safely and inspect before paying</li></ul></div><div><h3 class="form-title">Submit a listing</h3><p class="form-sub">Complete the details. WhatsApp will open with your message ready to send.</p><form id="sellerForm"><div class="form-grid"><div class="form-group"><label for="title">Item title *</label><input class="field" id="title" name="title" maxlength="80" required placeholder="e.g. Toyota Vitz 2008"></div><div class="form-group"><label for="category">Category *</label><select class="field" id="category" name="category" required><option value="">Choose category</option><option>Cars</option><option>Phones</option><option>Electronics</option><option>Home</option><option>Other</option></select></div><div class="form-group"><label for="price">Price (USD) *</label><input class="field" id="price" name="price" type="number" min="0.01" max="100000000" step="0.01" required placeholder="e.g. 250"></div><div class="form-group"><label for="location">Location *</label><input class="field" id="location" name="location" maxlength="60" required placeholder="e.g. Ruwa, Mashonaland East"></div><div class="form-group"><label for="phone">Your WhatsApp number *</label><input class="field" id="phone" name="phone" type="tel" maxlength="25" required placeholder="e.g. 0771234567"></div><div class="form-group"><label for="imageUrl">Photo link (optional)</label><input class="field" id="imageUrl" name="imageUrl" type="url" maxlength="500" placeholder="https://..."></div><div class="form-group full"><label for="description">Description *</label><textarea class="field" id="description" name="description" maxlength="1000" required placeholder="Condition, age, features and any faults..."></textarea></div></div><p class="form-note">Your submission is sent only when you press Send in WhatsApp. This demo does not automatically publish or save listings.</p><button class="btn btn-primary" type="submit">Send listing via WhatsApp ↗</button><div class="status" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
+    <section class="how" aria-label="How it works"><div class="how-card"><span class="how-icon">🔎</span><b>1. Find an item</b><p>Search by keyword, category or location.</p></div><div class="how-card"><span class="how-icon">💬</span><b>2. Contact the seller</b><p>Ask questions and arrange a safe viewing directly.</p></div><div class="how-card"><span class="how-icon">🤝</span><b>3. Check before paying</b><p>Inspect the item and verify ownership before any payment.</p></div></section>
+  </main>
+  <footer><div class="wrap"><div class="footer-row"><div><div class="footer-brand">ZimLink Marketplace 🇿🇼</div><p>Local listings. Direct connections.</p></div><div><a href="#listings">Browse</a> · <a href="#sell">Sell an item</a></div></div><p class="disclaimer">Demo version: the example listings below are sample content, not verified offers. ZimLink currently does not process payments, guarantee sellers, or automatically store submissions. Verify goods, identity and ownership independently before paying.</p><p class="disclaimer">© <span id="year"></span> ZimLink Marketplace. Name and brand availability have not been checked.</p></div></footer>
+  <div class="mobile-cta"><a class="btn btn-primary" href="#sell">＋ List your item for free</a></div>
+<script>
+'use strict';
+
+// IMPORTANT: Replace this with the marketplace administrator's WhatsApp number.
+// Zimbabwe example: 263771234567 (country code 263, without the leading 0 or +).
+const ADMIN_WHATSAPP = 'REPLACE_WITH_YOUR_NUMBER';
+
+// These are sample listings for testing the layout. Replace them with real, verified listings.
+const listings = [
+  {id:1,title:'Toyota Vitz 2008',category:'Cars',price:3200,location:'Harare',emoji:'🚗',description:'Sample listing only. Check the vehicle, documents and condition before purchase.',seller:'263771111111',tag:'Sample'},
+  {id:2,title:'Samsung Galaxy A-series',category:'Phones',price:145,location:'Ruwa',emoji:'📱',description:'Sample listing only. Confirm exact model, storage, battery and condition with the seller.',seller:'263772222222',tag:'Sample'},
+  {id:3,title:'Laptop for school or work',category:'Electronics',price:220,location:'Harare',emoji:'💻',description:'Sample listing only. Test the laptop, charger, battery and specifications before buying.',seller:'263773333333',tag:'Sample'},
+  {id:4,title:'Three-seater sofa',category:'Home',price:180,location:'Bulawayo',emoji:'🛋️',description:'Sample listing only. Ask for current photos and confirm pickup or delivery arrangements.',seller:'263774444444',tag:'Sample'},
+  {id:5,title:'Honda Fit 2010',category:'Cars',price:4600,location:'Mutare',emoji:'🚙',description:'Sample listing only. Arrange an independent inspection and verify vehicle ownership.',seller:'263775555555',tag:'Sample'},
+  {id:6,title:'Wireless headphones',category:'Electronics',price:25,location:'Gweru',emoji:'🎧',description:'Sample listing only. Test sound, charging and accessories before making a deal.',seller:'263776666666',tag:'Sample'}
+];
+
+const grid = document.getElementById('listingGrid');
+const searchInput = document.getElementById('searchInput');
+const locationFilter = document.getElementById('locationFilter');
+const count = document.getElementById('listingCount');
+let activeCategory = 'All';
+
+/** @param {unknown} value */
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  })[character]);
+}
+
+/** @param {number|string} value */
+function money(value) {
+  return new Intl.NumberFormat('en-US', {maximumFractionDigits:2}).format(value);
+}
+
+function renderListings() {
+  const term = searchInput.value.trim().toLowerCase();
+  const place = locationFilter.value.toLowerCase();
+  const filtered = listings.filter(item => {
+    const text = `${item.title} ${item.category} ${item.location} ${item.description}`.toLowerCase();
+    return (activeCategory === 'All' || item.category === activeCategory) &&
+      (!term || text.includes(term)) && (!place || item.location.toLowerCase() === place || (place === 'other' && !['harare','ruwa','bulawayo','mutare','gweru'].includes(item.location.toLowerCase())));
+  });
+  count.textContent = `${filtered.length} sample ${filtered.length === 1 ? 'listing' : 'listings'}`;
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty"><strong>No listings found.</strong><br>Try another search or choose a different category.</div>';
+    return;
+  }
+  grid.innerHTML = filtered.map(item => {
+    const safeTitle = escapeHtml(item.title);
+    return `<article class="listing"><div class="listing-photo"><span class="emoji" aria-hidden="true">${item.emoji}</span><span class="tag">${escapeHtml(item.tag || 'Listing')}</span></div><div class="listing-body"><div class="listing-category">${escapeHtml(item.category)}</div><h3>${safeTitle}</h3><p class="price">$${money(item.price)}</p><div class="meta">📍 ${escapeHtml(item.location)}</div><p class="description">${escapeHtml(item.description)}</p><div class="listing-footer"><a class="btn btn-light" href="#sell" aria-label="Sample listing, submit your own item instead">Sample only</a></div></div></article>`;
+  }).join('');
+}
+
+document.getElementById('categories').addEventListener('click', event => {
+  const button = event.target.closest('button[data-category]');
+  if (!button) return;
+  activeCategory = button.dataset.category;
+  document.querySelectorAll('.chip').forEach(chip => chip.classList.toggle('active', chip === button));
+  renderListings();
+});
+
+searchInput.addEventListener('input', renderListings);
+locationFilter.addEventListener('change', renderListings);
+document.getElementById('searchForm').addEventListener('submit', event => {
+  event.preventDefault();
+  renderListings();
+  document.getElementById('listings').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+document.getElementById('sellerForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  if (!/^\d{8,15}$/.test(ADMIN_WHATSAPP)) {
+    document.getElementById('formMessage').textContent = 'Setup needed: edit the code and replace ADMIN_WHATSAPP with your WhatsApp number in international digits format, e.g. 263771234567.';
+    return;
+  }
+
+  const data = new FormData(form);
+  const message = [
+    'New ZimLink Marketplace listing submission',
+    '',
+    'Title: ' + data.get('title'),
+    'Category: ' + data.get('category'),
+    'Price: US$' + data.get('price'),
+    'Location: ' + data.get('location'),
+    'Seller WhatsApp: ' + data.get('phone'),
+    'Photo link: ' + (data.get('imageUrl') || 'Not provided'),
+    'Description: ' + data.get('description')
+  ].join('\n');
+
+  const url = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(message)}`;
+  const opened = window.open(url, '_blank');
+  const status = document.getElementById('formMessage');
+  if (opened) {
+    status.textContent = 'WhatsApp opened with your listing details. Press Send in WhatsApp to submit it for review.';
+  } else {
+    status.textContent = 'Your browser blocked the new tab. Open this WhatsApp link to continue: ' + url;
+  }
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+renderListings();
+</script>
+</body>
+</html>
